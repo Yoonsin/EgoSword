@@ -45,14 +45,19 @@ public class InGameManager : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void GoNextMapServerRPC()
     {
-       
-        if(SceneManager.GetActiveScene().name == "TutorialScene")
+
+        if (SceneManager.GetActiveScene().name == "TutorialScene")
         {
             //서버에서 게임 씬을 시작함
-         
+
             NetworkManager.Singleton.SceneManager.LoadScene("InGameScene_1", LoadSceneMode.Single);
             return;
+        } else if (SceneManager.GetActiveScene().name == "InGameScene_1")
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene("InGameScene_2", LoadSceneMode.Single);
+            return;
         }
-       
+
+
     }
 }

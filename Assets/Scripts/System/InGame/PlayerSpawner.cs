@@ -78,12 +78,12 @@ public class PlayerSpawner : NetworkBehaviour
         {
             if (KnightPlayerRef)
             {
-                
+                KnightPlayerRef.transform.position = new Vector3(0, 0, 0);
             }
 
             if (SwordPlayerRef)
             {
-             
+                SwordPlayerRef.transform.position = new Vector3(0, 0, 0);
             }
         }
     }
